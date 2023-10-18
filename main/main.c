@@ -31,7 +31,7 @@ void button_task(void *pvParameters) {
 
 void print_student(void * pvParameters ){
 	for(;;){
-		printf("2014722\n");
+		printf("2014722");
 //		vTaskDelay(pdMS_TO_TICKS( 1000 ));
 		vTaskDelay(1000/portTICK_PERIOD_MS);
 	}
@@ -42,8 +42,8 @@ void app_main(void)
 {
 	 xTaskCreate(print_student,"print_student", 1024, NULL , 5, NULL);
 	 xTaskCreate(button_task, "button_task", 1024, NULL, 2, NULL);
-	 while(1){
-		 vTaskDelay(1000/portTICK_PERIOD_MS);
-	 }
-	 vTaskStartScheduler();
+//	 while(1){
+//		 vTaskDelay(1000/portTICK_PERIOD_MS);
+//	 }
+//	 vTaskStartScheduler();
 }
